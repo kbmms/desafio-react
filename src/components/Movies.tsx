@@ -86,13 +86,14 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
     }, [searchQuery]);
 
 
-    // Create a function to convert the title to a slug format
     const createSlug = (title: string): string => {
-      return slugify(title, {
-        replacement: '-', 
-        lower: true, 
+      const cleanTitle = title.replace(/:/g, ''); // Remove all occurrences of ":"
+      return slugify(cleanTitle, {
+        replacement: '-',
+        lower: true,
       });
     };
+    
 
     const handlePreviousPage = () => {
       setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
