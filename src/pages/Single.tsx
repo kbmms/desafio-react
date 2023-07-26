@@ -15,7 +15,7 @@ import 'react-toastify/dist/ReactToastify.css';
 interface MovieDetailsParams {
     title: string;
     imdbID: string;
-    [key: string]: string; // Index signature para satisfazer a restrição
+    [key: string]: string;
   }
 
 interface MovieDetails {
@@ -64,7 +64,7 @@ export default function Single(){
 
     const withBreak = (actorList:string) => {
         if (!actorList) {
-          return null; // Either return a default value or an empty string as needed
+          return null; 
         }
       
         // Split the string into an array, using the comma as separator
@@ -106,7 +106,7 @@ export default function Single(){
         }
         }
     
-        setIsFavorite(!isFavorite); // Updates the state of isFavorite
+        setIsFavorite(!isFavorite);
     };
 
     useEffect(() => {

@@ -44,13 +44,13 @@ export default function RelatedMovies({ selectedTitle }: RelatedMoviesProps) {
   // Create a function to convert the title to a slug format
   const createSlug = (title: string): string => {
     return slugify(title, {
-      replacement: '-', // Replace spaces with hyphens
-      lower: true, // Convert text to lowercase
+      replacement: '-',
+      lower: true,
     });
   };
 
   return (
-    <div className="mt-9">
+    <div className="mt-9 pb-9 pl-4 pr-4 lg:pl-0 lg:pr-0">
       <h2 className="text-white text-2xl font-bold mb-4">Your search:</h2>
       <div className="grid grid-cols-6 gap-4 overflow-auto">
         {relatedMovies.map((movie) => (

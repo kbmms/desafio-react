@@ -8,7 +8,6 @@ interface Movie {
   imdbID: string;
   Title: string;
   Poster: string;
-  // Other properties you expect to receive from the API can be added here
 }
 
 interface MoviesProps {
@@ -18,9 +17,9 @@ interface MoviesProps {
 
 interface OmdbApiResponse {
   Search: Movie[];
-  Response: 'True' | 'False'; // The Response property will be 'True' or 'False'
-  Error?: boolean; // The Error property is optional
-  totalResults: number; // Total number of results from the API
+  Response: 'True' | 'False';
+  Error?: boolean;
+  totalResults: number;
 }
 
 const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
@@ -31,7 +30,7 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
   
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);
-  const itemsPerPage = 10; // Number of items to show per page
+  const itemsPerPage = 10;
 
   let debounceTimeout: ReturnType<typeof setTimeout>;
 
@@ -40,7 +39,7 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
     clearTimeout(debounceTimeout);
     debounceTimeout = setTimeout(() => {
       handleSearch();
-    }, 2000); // 2000ms = 2 seconds debounce
+    }, 2000);
 
     return () => {
       clearTimeout(debounceTimeout);
@@ -81,7 +80,7 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
     }
   };
 
-    // Efeito para reiniciar a página quando o searchQuery mudar
+    // Effect to restart page when searchQuery changes
     useEffect(() => {
       setCurrentPage(1);
     }, [searchQuery]);
@@ -90,8 +89,8 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
     // Create a function to convert the title to a slug format
     const createSlug = (title: string): string => {
       return slugify(title, {
-        replacement: '-', // Replace spaces with hyphens
-        lower: true, // Convert text to lowercase
+        replacement: '-', 
+        lower: true, 
       });
     };
 
@@ -104,7 +103,7 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
     };
   
 
-  // Renderizar a lista de filmes da página atual
+  // Render list of movies from current page
   const startIndex = (currentPage - 1) * itemsPerPage;
   const visibleMovies = movies.slice(startIndex, startIndex + itemsPerPage);
 
