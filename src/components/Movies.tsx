@@ -149,23 +149,23 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
       </>)}
     </>
     )}
-      {totalPages > 1 && (
-  <div className="flex justify-center mt-28">
-  <button
-    className="mr-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
-    onClick={handlePreviousPage}
-    disabled={currentPage === 1}>
-    Previous
-  </button>
-  <button
-    className="ml-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
-    onClick={handleNextPage}
-    disabled={currentPage === totalPages}>
-    Next
-  </button>
-  </div>
-  )}
-  {totalPages > 1 && <div className='text-white text-center mt-2 text-gray-600'> {currentPage} of {totalPages} pages</div>}
+    {totalPages > 1 && (
+    <div className="flex justify-center mt-28">
+    <button className="mr-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
+      onClick={handlePreviousPage}
+      disabled={currentPage === 1}>
+      Previous
+    </button>
+    <button className="ml-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
+      onClick={handleNextPage}
+      disabled={currentPage === totalPages}>
+      Next
+    </button>
+    </div>
+    )}
+
+    {totalPages > 1 && <div className='mb-9 text-white text-center mt-2 text-gray-600'> {currentPage} of {totalPages} pages</div>}
+
   </section>
   );
 };

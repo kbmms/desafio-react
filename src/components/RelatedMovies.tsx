@@ -50,17 +50,17 @@ export default function RelatedMovies({ selectedTitle }: RelatedMoviesProps) {
   };
 
   return (
-    <div className="mt-9 pb-9 pl-4 pr-4 lg:pl-0 lg:pr-0">
+    <div className="mt-9 pb-9 pl-4 pr-4 lg:pl-0 lg:pr-0 related-box">
       <h2 className="text-white text-2xl font-bold mb-4">Your search:</h2>
-      <div className="grid grid-cols-6 gap-4 overflow-auto">
+      <div className="flex gap-[0.9rem] overflow-auto pt-5 pb-5">
         {relatedMovies.map((movie) => (
           <Link 
           to={`#`} key={movie.imdbID}
           onClick={() => {
             window.location.href = `/${createSlug(movie.Title)}/${movie.imdbID}`;
           }}>
-            <div className="bg-[#171C21] rounded-md overflow-hidden shadow-lg">
-              <img className="w-full h-40 object-cover" src={movie.Poster} alt={movie.Title} />
+            <div className="w-[140px] h-[200px] bg-[#171C21] rounded-md overflow-hidden shadow-lg">
+              <img className="w-full object-cover" src={movie.Poster} alt={movie.Title} />
             </div>
           </Link>
         ))}

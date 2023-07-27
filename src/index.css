@@ -29,3 +29,40 @@ body {
 .imdb-rating {
   padding: 0 8px 0px 0px;
 }
+
+
+/* Firefox */
+.related-box  {
+  scrollbar-width: thin;
+  scrollbar-color: #48484A #1D2D34;
+}
+
+.related-box ::-webkit-scrollbar {
+  width: 11px;
+  width: 11px;
+}
+.related-box ::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #1D2D34;
+}
+
+.related-box ::-webkit-scrollbar-track:hover {
+  background-color: #000;
+}
+
+.related-box ::-webkit-scrollbar-track:active {
+  background-color: #000;
+}
+
+.related-box ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #48484A;
+}
+
+.related-box ::-webkit-scrollbar-thumb:hover {
+  background-color: #555556;
+}
+
+.related-box ::-webkit-scrollbar-thumb:active {
+  background-color: #5E5E5E;
+}
