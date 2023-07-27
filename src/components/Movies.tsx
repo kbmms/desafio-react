@@ -137,11 +137,11 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
           </div>
       </>) :
       (<>      
-        <div className="grid gap-4 mt-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">  
+        <div className="grid gap-4 mt-8 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">  
             {visibleMovies?.map((movie) => (
               <Link to={`${createSlug(movie.Title)}/${movie.imdbID}`} key={movie.imdbID}>
                 <div className="movie-card cursor-pointer transition transform hover:scale-110 flex items-center justify-center">
-                  <img className="w-full h-[198px] rounded-md object-contain lg:object-cover" src={movie.Poster} alt={movie.Title} />
+                  <img className="w-full h-[198px] rounded-md object-contain lg:h-[198px] lg:w-[140px]" src={movie.Poster} alt={movie.Title} />
                 </div>
               </Link>
             ))}
@@ -154,15 +154,13 @@ const Movies: React.FC<MoviesProps> = ({ searchQuery, setIsLoading }) => {
   <button
     className="mr-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
     onClick={handlePreviousPage}
-    disabled={currentPage === 1}
-  >
+    disabled={currentPage === 1}>
     Previous
   </button>
   <button
     className="ml-2 px-4 py-2 text-white bg-slate-800 rounded hover:bg-slate-600 focus:outline-none"
     onClick={handleNextPage}
-    disabled={currentPage === totalPages}
-  >
+    disabled={currentPage === totalPages}>
     Next
   </button>
   </div>
